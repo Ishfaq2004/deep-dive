@@ -1,0 +1,13 @@
+{
+  "name": "challenge-service",
+  "version": "1.0.0",
+  "description": "Fish API puzzles; keeps the answers server-side",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
