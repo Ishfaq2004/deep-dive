@@ -1,0 +1,40 @@
+/* Loaded as a plain CSS @import rather than next/font/google: next/font
+   tries to download the font files at BUILD time and self-host them,
+   which fails hard the moment the build machine has no internet access
+   (exactly what happened the first time this project was built, behind a
+   locked-down sandbox). A CSS @import only ever runs in the BROWSER, at
+   render time, same as any other stylesheet — the build itself never
+   depends on the network. Simpler, and one less way the build can break
+   on a machine you don't control. */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #0a1628;
+  color: #f4faff;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+/* --- v2 game overlays ------------------------------------------------- */
+@keyframes pop {
+  0% { transform: scale(1.7); }
+  100% { transform: scale(1); }
+}
+.animate-pop { animation: pop 260ms ease-out; }
+
+@keyframes banner {
+  0% { opacity: 0; transform: translate(-50%, -12px); }
+  12% { opacity: 1; transform: translate(-50%, 0); }
+  85% { opacity: 1; }
+  100% { opacity: 0; }
+}
+.animate-banner { animation: banner 3.4s ease-out forwards; }
+
+@keyframes lowair {
+  0%, 100% { box-shadow: inset 0 0 60px rgba(255, 107, 91, 0.15); }
+  50% { box-shadow: inset 0 0 160px rgba(255, 107, 91, 0.55); }
+}
+.animate-lowair { animation: lowair 0.9s ease-in-out infinite; }
